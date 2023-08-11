@@ -16,24 +16,24 @@ public class LongestSubsequence {
      */
     public static int longestSubsequence(int[] nums, int k) {
         int n = nums.length;
-        int[] dp = new int[n];// Array to store the length of longest subsequence ending at each index.
+        int[] dp = new int[n];
 
         for (int i = 0; i < n; i++) {
-            int maxLen = 0;// Initialize maxLen with 1 to include the current element itself
+            int maxLen = 0;
             for (int j = 0; j < i; j++) {
                 if (nums[i] < nums[j] && nums[j] - nums[i] <= k) {
-                    maxLen = Math.max(maxLen, dp[j]); // Update maxLen if a valid element is found.
+                    maxLen = Math.max(maxLen, dp[j]); 
                 }
             }
-            dp[i] = maxLen + 1;// Store the calculated length in the dp array.
+            dp[i] = maxLen + 1;
         }
 
         int maxLength = 0;
         for (int len : dp) {
-            maxLength = Math.max(maxLength, len);// Find the maximum length among all calculated lengths.
+            maxLength = Math.max(maxLength, len);
         }
 
-        return maxLength;// Return the length of the longest subsequence.
+        return maxLength;
     }
 
 }

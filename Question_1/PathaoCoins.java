@@ -12,25 +12,23 @@ public class PathaoCoins {
         int n = ratings.length;
         int[] coins = new int[n];
 
-        // Initialize coins array with 1 coin for each position.
-        Arrays.fill(coins, 1);// Initially, assign 1 coin to each position.
-
-        // Iterate forward to adjust coins based on increasing ratings.
+        
+        Arrays.fill(coins, 1);
         for (int i = 1; i < n; i++) {
             if (ratings[i] > ratings[i - 1]) {
-                coins[i] = coins[i - 1] + 1;// Increase coins if rating is higher than previous.
+                coins[i] = coins[i - 1] + 1;
             }
         }
-         // Iterate backward to ensure decreasing ratings also affect coin adjustments.
+         
         for (int i = n - 2; i >= 0; i--) {
             if (ratings[i] > ratings[i + 1] && coins[i] <= coins[i + 1]) {
-                coins[i] = coins[i + 1] + 1;// Increase coins if rating is higher than next and not already greater.
+                coins[i] = coins[i + 1] + 1;
             }
         }
 
         int totalCoins = 0;
         for (int coinsCount : coins) {
-            totalCoins += coinsCount;// Calculate the total coins needed.
+            totalCoins += coinsCount;
         }
 
         return totalCoins;

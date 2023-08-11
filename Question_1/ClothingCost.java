@@ -1,5 +1,5 @@
 package CourseWork.Question_1;
-//1 a.
+//Q.1.a
 public class ClothingCost {
     public static void main(String[] args) {
         int[][] price = {
@@ -16,18 +16,17 @@ public class ClothingCost {
         int minCost3 = 0;
 
         for (int[] person : price) {
-            int newMinCost1 = person[0] + Math.min(minCost2, minCost3);// contains the updated minimum cost for clothing of type 1 for the current person, considering the preferences and minimum costs from the previous person's choices for types 2 and 3.
+            int newMinCost1 = person[0] + Math.min(minCost2, minCost3);
             int newMinCost2 = person[1] + Math.min(minCost1, minCost3);
             int newMinCost3 = person[2] + Math.min(minCost1, minCost2);
 
-            // Update the minimum costs for each type of clothing
-            minCost1 = newMinCost1;//This variable represents the minimum cost of selecting clothing for type 1 for the previous person. It is updated based on the previous person's choices for types 2 and 3.
+            
+            minCost1 = newMinCost1;
 
-            minCost2 = newMinCost2;//This variable represents the minimum cost of selecting clothing for type 1 for the previous person. It is updated based on the previous person's choices for types 2 and 3.
+            minCost2 = newMinCost2;
 
-            minCost3 = newMinCost3;//This variable represents the minimum cost of selecting clothing for type 1 for the previous person. It is updated based on the previous person's choices for types 2 and 3.
+            minCost3 = newMinCost3;
         }
-        // Return the minimum of the three computed costs
         return Math.min(minCost1, Math.min(minCost2, minCost3));
     }
 

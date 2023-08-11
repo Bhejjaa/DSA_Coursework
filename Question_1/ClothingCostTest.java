@@ -11,7 +11,7 @@ public class ClothingCostTest {
                 {11, 14, 3},
                 {14, 2, 10}
         };
-        int expectedMinimumCost = 9; // The minimum cost is achieved by selecting clothing 1, clothing 3, and clothing 3.
+        int expectedMinimumCost = 9; 
 
         int result = ClothingCost.minimumCost(price);
         assertEquals(expectedMinimumCost, result);
