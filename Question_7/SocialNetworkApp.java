@@ -1,4 +1,4 @@
-package CourseWork;
+package CourseWork.Question_7;
 
 import javax.swing.*;
 import java.awt.*;

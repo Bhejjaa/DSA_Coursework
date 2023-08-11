@@ -1,4 +1,4 @@
-package CourseWork;
+package CourseWork.Question_3;
 
 import org.junit.Test;
 

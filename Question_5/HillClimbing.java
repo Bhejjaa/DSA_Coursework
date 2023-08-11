@@ -1,5 +1,5 @@
-package CourseWork;
 //5.a
+package CourseWork.Question_5;
 import java.util.Random;
 public class HillClimbing {
     public static void main(String[] args) {
@@ -55,3 +55,10 @@ public class HillClimbing {
         solution[index] = (char) (random.nextInt(94) + 32);
     }
 }
+/*
+Key Steps:
+    Generate a random initial solution
+    Evaluate initial solution
+    Iteratively try to improve solution
+    Stop when optimal solution is found
+ */

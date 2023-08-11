@@ -1,4 +1,4 @@
-package CourseWork;
+package CourseWork.Question_3;
 // 3.b
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,21 +15,24 @@ import java.util.NoSuchElementException;
             this.weight = weight;
         }
     }
-    class BellmanFord {
+    // Bellman-Ford algorithm to find shortest paths and detect negative cycles
+class BellmanFord {
+    // Graph represented as edges with weight
     private int vertices, edges;
     private List<Edge> edgeList;
-
+    // Constructor
     BellmanFord(int vertices, int edges) {
         this.vertices = vertices;
         this.edges = edges;
         this.edgeList = new ArrayList<>();
     }
-
+    // Add directed edge 
     void addEdge(int source, int destination, int weight) {
         edgeList.add(new Edge(source, destination, weight));
     }
-
+    // Run Bellman-Ford algo
     void bellmanFord(int source) {
+        // Initialize distances 
         int[] distance = new int[vertices];
         Arrays.fill(distance, Integer.MAX_VALUE);
         distance[source] = 0;
@@ -66,12 +69,12 @@ import java.util.NoSuchElementException;
 }
 // MaxHeapPriorityQueue implementation
 class MaxHeapPriorityQueue {
-    private List<Integer> heap;
+    private List<Integer> heap; // Heap stored as ArrayList
 
     MaxHeapPriorityQueue() {
         heap = new ArrayList<>();
     }
-
+    // Insert while maintaining max heap property
     void insert(int value) {
         heap.add(value);
         int currentIndex = heap.size() - 1;
@@ -83,7 +86,7 @@ class MaxHeapPriorityQueue {
             parentIndex = (currentIndex - 1) / 2;
         }
     }
-
+    // Extract max element
     int extractMax() {
         if (isEmpty()) {
             throw new NoSuchElementException("Priority queue is empty.");
@@ -91,6 +94,7 @@ class MaxHeapPriorityQueue {
 
         int maxValue = heap.get(0);
         int lastIndex = heap.size() - 1;
+        // Replace with last, remove last
         heap.set(0, heap.get(lastIndex));
         heap.remove(lastIndex);
 
@@ -152,6 +156,7 @@ public class BelmanandHeap {
     maxHeap.insert(1);
 
     System.out.println("Max heap elements:");
+    //printing the results
     while (!maxHeap.isEmpty()) {
         System.out.println(maxHeap.extractMax());
     }
